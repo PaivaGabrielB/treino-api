@@ -1,4 +1,4 @@
-# API - SISTEMA INTEGRADO DE FISCALIZAÇÃO [API](https://img.shields.io/badge/API-yellow)
+# API - SISTEMA INTEGRADO DE FISCALIZAÇÃO ![API](https://img.shields.io/badge/API-yellow)
 
 
 Esta API foi desenvolvida para atender o aplicativo mobile
