@@ -1,6 +1,6 @@
 -- Create the Book table
 CREATE TABLE Book (
-    ID UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    ID SERIAL PRIMARY KEY,
     Title VARCHAR(255) NOT NULL,
     Author VARCHAR(255) NOT NULL,
     ISBN INT NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE Book (
 
 -- Create the Member table
 CREATE TABLE Member (
-    ID UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    ID SERIAL PRIMARY KEY,
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE Member (
 
 -- Create the Loan table
 CREATE TABLE Loan (
-    ID UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    ID SERIAL PRIMARY KEY,
     BookID UUID NOT NULL,
     MemberID UUID NOT NULL,
     LoanDate DATE NOT NULL,
