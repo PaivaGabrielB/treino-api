@@ -1,4 +1,4 @@
-package br.com.codiub.eucuido.model.entity;
+package br.com.treino.model.entity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,8 @@
-package br.com.codiub.eucuido.api.service;
+package br.com.treino.api.service;
 
-import br.com.codiub.eucuido.model.entity.Book;
-import br.com.codiub.eucuido.model.input.BookInput;
-import br.com.codiub.eucuido.repository.BookRepository;
+import br.com.treino.model.entity.Book;
+import br.com.treino.model.input.BookInput;
+import br.com.treino.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

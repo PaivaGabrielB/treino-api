@@ -1,4 +1,4 @@
-package br.com.codiub.eucuido.core.config;
+package br.com.treino.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

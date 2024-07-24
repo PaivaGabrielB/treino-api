@@ -1,4 +1,4 @@
-package br.com.codiub.eucuido.core.cors;
+package br.com.treino.core.cors;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

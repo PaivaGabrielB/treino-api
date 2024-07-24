@@ -1,4 +1,4 @@
-package br.com.codiub.eucuido.model.input;
+package br.com.treino.model.input;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,9 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Data
 public class BookInput {
     private String title;
     private String author;
