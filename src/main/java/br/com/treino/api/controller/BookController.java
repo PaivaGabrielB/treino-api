@@ -1,9 +1,9 @@
-package br.com.codiub.eucuido.api.controller;
+package br.com.treino.api.controller;
 
-import br.com.codiub.eucuido.api.service.BookService;
-import br.com.codiub.eucuido.model.entity.Book;
-import br.com.codiub.eucuido.model.input.BookInput;
-import br.com.codiub.eucuido.model.output.BookOutput;
+import br.com.treino.api.service.BookService;
+import br.com.treino.model.entity.Book;
+import br.com.treino.model.input.BookInput;
+import br.com.treino.model.output.BookOutput;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
-package br.com.codiub.eucuido.model.output;
+package br.com.treino.model.output;
 
-import br.com.codiub.eucuido.model.entity.Book;
+import br.com.treino.model.entity.Book;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

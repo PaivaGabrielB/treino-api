@@ -1,4 +1,4 @@
-package br.com.codiub.eucuido.core.config;
+package br.com.treino.core.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
