@@ -18,10 +18,10 @@ public class Loan {
     private Long id;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "book_id", unique = true)
-    private Loan bookId;
+    private Book book;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "member_id", unique = true)
-    private Loan memberId;
+    private Member member;
     @Column(name = "loan_date")
     private LocalDate loanDate;
     @Column(name = "return_date")
@@ -29,27 +29,19 @@ public class Loan {
     @Column(name = "status")
     private String status;
 
-    public Book getBookId() {
-        return bookId.getBookId();
-    }
-
-    public Member getMemberId() {
-        return memberId.getMemberId();
-    }
-
-    public Long setBookId(Long bookId) {
-        return bookId;
-    }
-
-    public Long setMemberId(Long memberId) {
-        return memberId;
-    }
-
-//    public Book setBookId(Book book) {
+//    public Book getBook() {
 //        return book;
 //    }
 //
-//    public Member setMemberId(Member member) {
+//    public void setBook(Book book) {
+//        this.book = book;
+//    }
+//
+//    public Member getMember() {
 //        return member;
+//    }
+//
+//    public void setMember(Member member) {
+//        this.member = member;
 //    }
 }

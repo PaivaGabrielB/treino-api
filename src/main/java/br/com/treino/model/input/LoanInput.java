@@ -12,9 +12,9 @@ import java.time.LocalDate;
 @ToString
 @Data
 public class LoanInput {
-    private Long bookId;
+    private Long book;
 
-    private Long memberId;
+    private Long member;
 
     private LocalDate loanDate;
 
@@ -22,11 +22,11 @@ public class LoanInput {
 
     private String status;
 
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public Long getBookId() {
-        return getBookId();
-    }
+//    public Long getMemberId() {
+//        return memberId;
+//    }
+//
+//    public Long getBookId() {
+//        return getBookId();
+//    }
 }
