@@ -39,18 +39,9 @@ public class LoanService {
     }
 
     public Loan save(LoanInput loanInput) {
-        Loan loan = new Loan();
-//        Loan loan = modelMapper.map(loanInput, Loan.class);
-//        loan.setMember(memberRepository.findById(loanInput.getMember()).orElseThrow(() -> new RuntimeException("Member not found!")));
-//        loan.setBook(bookRepository.findById(loanInput.getBook()).orElseThrow(() -> new RuntimeException("Book not found!")));
-
-        loan.setBookId(loanInput.getBookId());
-        loan.setMemberId(loanInput.getMemberId());
-
-            bookRepository.findById(loanInput.getBookId())
-                .orElseThrow(() -> new IllegalArgumentException("Book not found"));
-            memberRepository.findById(loanInput.getMemberId())
-                .orElseThrow(() -> new IllegalArgumentException("Member not found"));
+        Loan loan = modelMapper.map(loanInput, Loan.class);
+        loan.setMember(memberRepository.findById(loanInput.getMember()).orElseThrow(() -> new RuntimeException("Member not found!")));
+        loan.setBook(bookRepository.findById(loanInput.getBook()).orElseThrow(() -> new RuntimeException("Book not found!")));
 
         return loanRepository.save(loan);
     }

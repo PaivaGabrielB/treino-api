@@ -16,9 +16,9 @@ public class LoanOutput {
 
     private Long id;
 
-    private Book bookId;
+    private Long book;
 
-    private Member memberId;
+    private Long member;
 
     private LocalDate loanDate;
 
@@ -28,8 +28,8 @@ public class LoanOutput {
 
     public LoanOutput(Loan loan) {
         this.id = loan.getId();
-        this.bookId = loan.getBookId();
-        this.memberId = loan.getMemberId();
+        this.book = loan.getBook().getId();
+        this.member = loan.getMember().getId();
         this.loanDate = loan.getLoanDate();
         this.returnDate = loan.getReturnDate();
         this.status = loan.getStatus();
