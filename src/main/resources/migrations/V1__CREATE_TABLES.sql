@@ -21,11 +21,21 @@ CREATE TABLE Member (
 -- Create the Loan table
 CREATE TABLE Loan (
     ID SERIAL PRIMARY KEY,
-    book_id UUID NOT NULL,
-    member_id UUID NOT NULL,
+    book_id bigint NOT NULL,
+    member_id bigint NOT NULL,
     loan_date DATE NOT NULL,
     return_date DATE,
     status VARCHAR(20) NOT NULL,
-    FOREIGN KEY (book_id) REFERENCES Book(id),
-    FOREIGN KEY (member_id) REFERENCES Member(id)
+--    FOREIGN KEY (book_id) REFERENCES Book(id),
+--    FOREIGN KEY (member_id) REFERENCES Member(id)
+);
+
+CREATE TABLE Reservation (
+    id SERIAL PRIMARY KEY,
+    book_id bigint NOT NULL,
+    member_id bigint NOT NULL,
+    reservation_date DATE,
+    status VARCHAR(20) NOT NULL,
+--    FOREIGN KEY (book_id) REFERENCES Book(id),
+--    FOREIGN KEY (member_id) REFERENCES Member(id)
 );
