@@ -1,16 +1,20 @@
 package br.com.treino.api.controller;
 
 import br.com.treino.api.service.BookService;
+import br.com.treino.core.cors.BookSpecification;
 import br.com.treino.model.entity.Book;
 import br.com.treino.model.input.BookInput;
 import br.com.treino.model.output.BookOutput;
+import br.com.treino.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +25,9 @@ public class BookController {
 
     @Autowired
     private final BookService bookService;
+
+    @Autowired
+    private final BookRepository bookRepository;
 
     @PostMapping
     public ResponseEntity<?> save(@Valid @RequestBody BookInput bookInput) {
@@ -56,5 +63,16 @@ public class BookController {
         Book book = bookService.findById(id);
         BookOutput bookOutput = new BookOutput(book);
         return ResponseEntity.ok(bookOutput);
+    }
+
+    @GetMapping("/search")
+    public List<Book> searchBooks(
+            @RequestParam(required = false) String title,
+            @RequestParam(required = false) String author,
+            @RequestParam(required = false) String genre,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate loanDate,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate returnDate) {
+
+        return bookRepository.findAll(BookSpecification.getBooks(title, author, genre, loanDate, returnDate));
     }
 }
