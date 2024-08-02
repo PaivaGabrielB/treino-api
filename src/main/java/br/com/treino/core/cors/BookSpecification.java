@@ -24,7 +24,7 @@ public class BookSpecification {
                 predicates.add(criteriaBuilder.like(root.get("genre"), "%" + genre + "%"));
             }
             if (loanDate != null && returnDate != null) {
-                predicates.add(criteriaBuilder.between(root.get("publicationDate"), loanDate, returnDate));
+                predicates.add(criteriaBuilder.between(root.get("publishedDate"), loanDate, returnDate));
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
