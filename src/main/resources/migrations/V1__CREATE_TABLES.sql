@@ -25,7 +25,7 @@ CREATE TABLE Loan (
     member_id bigint NOT NULL,
     loan_date DATE NOT NULL,
     return_date DATE,
-    status VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL
 --    FOREIGN KEY (book_id) REFERENCES Book(id),
 --    FOREIGN KEY (member_id) REFERENCES Member(id)
 );
@@ -35,7 +35,24 @@ CREATE TABLE Reservation (
     book_id bigint NOT NULL,
     member_id bigint NOT NULL,
     reservation_date DATE,
-    status VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL
 --    FOREIGN KEY (book_id) REFERENCES Book(id),
 --    FOREIGN KEY (member_id) REFERENCES Member(id)
+);
+
+CREATE TABLE User (
+    ID SERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    email VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    role VARCHAR(10) NOT NULL,
+    cpf VARCHAR(11) NOT NULL,
+    endereco VARCHAR(30) NOT NULL,
+    telefone VARCHAR(20),
+    estado VARCHAR(2)
+);
+
+CREATE TABLE Roles (
+    ID SERIAL PRIMARY KEY,
+    role VARCHAR(20)
 );
